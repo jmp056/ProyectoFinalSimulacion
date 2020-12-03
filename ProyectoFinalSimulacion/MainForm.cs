@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace ProyectoFinalSimulacion
 {
-    public partial class Form1 : Form
+    public partial class SimuladorDeInversor : Form
     {
-        public Form1()
+        public SimuladorDeInversor()
         {
             InitializeComponent();
         }

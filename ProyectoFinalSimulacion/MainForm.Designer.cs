@@ -1,6 +1,6 @@
 ﻿namespace ProyectoFinalSimulacion
 {
-    partial class Form1
+    partial class SimuladorDeInversor
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SimuladorDeInversor));
             this.LeyendaGroupBox = new System.Windows.Forms.GroupBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -47,19 +45,27 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.MensajesGroupBox = new System.Windows.Forms.GroupBox();
             this.MensajeLabel = new System.Windows.Forms.Label();
             this.CargaGroupBox = new System.Windows.Forms.GroupBox();
             this.CargaLabel = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.CargaTimer = new System.Windows.Forms.Timer(this.components);
+            this.MensajeTimer = new System.Windows.Forms.Timer(this.components);
+            this.MensajeCargaLabel = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.InversorButton = new System.Windows.Forms.Button();
             this.LuzButton = new System.Windows.Forms.Button();
             this.VjH2Button = new System.Windows.Forms.Button();
             this.VjH3Button = new System.Windows.Forms.Button();
             this.VjH1Button = new System.Windows.Forms.Button();
             this.VjAlButton = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.AbH2Button = new System.Windows.Forms.Button();
             this.AiH3Button = new System.Windows.Forms.Button();
             this.AbH1Button = new System.Windows.Forms.Button();
@@ -95,19 +101,21 @@
             this.TvH1Button = new System.Windows.Forms.Button();
             this.TvSButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.MensajeTimer = new System.Windows.Forms.Timer(this.components);
-            this.MensajeCargaLabel = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.LeyendaGroupBox.SuspendLayout();
+            this.MensajesGroupBox.SuspendLayout();
+            this.CargaGroupBox.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.MensajesGroupBox.SuspendLayout();
-            this.CargaGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // LeyendaGroupBox
             // 
+            this.LeyendaGroupBox.BackColor = System.Drawing.Color.White;
             this.LeyendaGroupBox.Controls.Add(this.label15);
             this.LeyendaGroupBox.Controls.Add(this.pictureBox4);
             this.LeyendaGroupBox.Controls.Add(this.label12);
@@ -152,16 +160,6 @@
             this.label15.TabIndex = 15;
             this.label15.Text = "En reposo";
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImage = global::ProyectoFinalSimulacion.Properties.Resources.PausaBtn;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox4.Location = new System.Drawing.Point(5, 50);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(19, 18);
-            this.pictureBox4.TabIndex = 14;
-            this.pictureBox4.TabStop = false;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -181,16 +179,6 @@
             this.label11.Size = new System.Drawing.Size(57, 13);
             this.label11.TabIndex = 12;
             this.label11.Text = "Apagado";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::ProyectoFinalSimulacion.Properties.Resources.EncendidoBtn;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox3.Location = new System.Drawing.Point(105, 25);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(19, 18);
-            this.pictureBox3.TabIndex = 11;
-            this.pictureBox3.TabStop = false;
             // 
             // label10
             // 
@@ -292,23 +280,14 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Bo: Bombilla";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::ProyectoFinalSimulacion.Properties.Resources.ApagadoBtn;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox2.Location = new System.Drawing.Point(5, 25);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(19, 18);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // MensajesGroupBox
             // 
+            this.MensajesGroupBox.BackColor = System.Drawing.Color.White;
             this.MensajesGroupBox.Controls.Add(this.MensajeLabel);
             this.MensajesGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MensajesGroupBox.Location = new System.Drawing.Point(5, 293);
             this.MensajesGroupBox.Name = "MensajesGroupBox";
-            this.MensajesGroupBox.Size = new System.Drawing.Size(205, 212);
+            this.MensajesGroupBox.Size = new System.Drawing.Size(205, 127);
             this.MensajesGroupBox.TabIndex = 36;
             this.MensajesGroupBox.TabStop = false;
             // 
@@ -322,6 +301,7 @@
             // 
             // CargaGroupBox
             // 
+            this.CargaGroupBox.BackColor = System.Drawing.Color.White;
             this.CargaGroupBox.Controls.Add(this.MensajeCargaLabel);
             this.CargaGroupBox.Controls.Add(this.label14);
             this.CargaGroupBox.Controls.Add(this.CargaLabel);
@@ -357,6 +337,59 @@
             this.CargaTimer.Enabled = true;
             this.CargaTimer.Interval = 1000;
             this.CargaTimer.Tick += new System.EventHandler(this.CargaTimer_Tick);
+            // 
+            // MensajeTimer
+            // 
+            this.MensajeTimer.Interval = 5000;
+            this.MensajeTimer.Tick += new System.EventHandler(this.MensajeTimer_Tick);
+            // 
+            // MensajeCargaLabel
+            // 
+            this.MensajeCargaLabel.AutoSize = true;
+            this.MensajeCargaLabel.Location = new System.Drawing.Point(5, 45);
+            this.MensajeCargaLabel.Name = "MensajeCargaLabel";
+            this.MensajeCargaLabel.Size = new System.Drawing.Size(0, 16);
+            this.MensajeCargaLabel.TabIndex = 3;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.White;
+            this.groupBox1.Controls.Add(this.pictureBox5);
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(5, 426);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(205, 62);
+            this.groupBox1.TabIndex = 37;
+            this.groupBox1.TabStop = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(5, 15);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(0, 16);
+            this.label16.TabIndex = 0;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(90, 23);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(85, 32);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "2015 - 0163\r\n2016 - 0897";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackgroundImage = global::ProyectoFinalSimulacion.Properties.Resources.Programador;
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox5.Location = new System.Drawing.Point(35, 18);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(47, 38);
+            this.pictureBox5.TabIndex = 2;
+            this.pictureBox5.TabStop = false;
             // 
             // InversorButton
             // 
@@ -441,6 +474,36 @@
             this.VjAlButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.VjAlButton.UseVisualStyleBackColor = true;
             this.VjAlButton.Click += new System.EventHandler(this.Vj4Button_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::ProyectoFinalSimulacion.Properties.Resources.PausaBtn;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox4.Location = new System.Drawing.Point(5, 50);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(19, 18);
+            this.pictureBox4.TabIndex = 14;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::ProyectoFinalSimulacion.Properties.Resources.EncendidoBtn;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox3.Location = new System.Drawing.Point(105, 25);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(19, 18);
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::ProyectoFinalSimulacion.Properties.Resources.ApagadoBtn;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox2.Location = new System.Drawing.Point(5, 25);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(19, 18);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // AbH2Button
             // 
@@ -925,28 +988,26 @@
             this.pictureBox1.Image = global::ProyectoFinalSimulacion.Properties.Resources.Plano;
             this.pictureBox1.Location = new System.Drawing.Point(215, -1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(632, 522);
+            this.pictureBox1.Size = new System.Drawing.Size(632, 489);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // MensajeTimer
+            // statusStrip1
             // 
-            this.MensajeTimer.Interval = 5000;
-            this.MensajeTimer.Tick += new System.EventHandler(this.MensajeTimer_Tick);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 497);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(843, 22);
+            this.statusStrip1.TabIndex = 42;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // MensajeCargaLabel
-            // 
-            this.MensajeCargaLabel.AutoSize = true;
-            this.MensajeCargaLabel.Location = new System.Drawing.Point(5, 45);
-            this.MensajeCargaLabel.Name = "MensajeCargaLabel";
-            this.MensajeCargaLabel.Size = new System.Drawing.Size(0, 16);
-            this.MensajeCargaLabel.TabIndex = 3;
-            // 
-            // Form1
+            // SimuladorDeInversor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 517);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(843, 519);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.CargaGroupBox);
             this.Controls.Add(this.MensajesGroupBox);
             this.Controls.Add(this.InversorButton);
@@ -991,19 +1052,28 @@
             this.Controls.Add(this.TvH1Button);
             this.Controls.Add(this.TvSButton);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "SimuladorDeInversor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Simulador de inversor";
             this.LeyendaGroupBox.ResumeLayout(false);
             this.LeyendaGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.MensajesGroupBox.ResumeLayout(false);
             this.MensajesGroupBox.PerformLayout();
             this.CargaGroupBox.ResumeLayout(false);
             this.CargaGroupBox.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1076,6 +1146,11 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label MensajeCargaLabel;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.StatusStrip statusStrip1;
     }
 }
 
