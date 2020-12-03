@@ -12,24 +12,25 @@ namespace ProyectoFinalSimulacion
 
         // Variables globales -----------------------------------------------------------------------------------------------------------
 
+        bool Inversor = false; // Estado del inversor
+        bool Luz = true; // Estado del inversor
+        decimal Porcentaje = 0;
         int Carga = 3500; // Carga inicial del inversor
         int Consumo = 0; // Consumo actual
         int Limite = 5000; // limite de carga del inversor
-        int Aumento = 50; // Cantidad que aumenta la carga en un lapso de tiempo
-        bool Inversor = false; // Estado del inversor
-        //bool InversorReposo = false; // Pausa del inversor
-        bool Luz = true; // Estado del inversor
-        //bool LuzReposo = false; // Pausa de la luz 
+        int Aumento = 25; // Cantidad que aumenta la carga en un lapso de tiempo
+        int Tiempo = 0; // Tiempo en el que el inversor realizara una accion
+
 
         
         // Consumo de los articulos de la casa ------------------------------------------------------------------------------------------
 
         int Bombilla = 1; // Consumo de los bombillos 
-        int Television = 40; // Consumo de los televisores
+        int Television = 20; // Consumo de los televisores
         int Abanico = 10; // Consumo de los abanicos
         int Radio = 30; // Consumo de los radios
         int Pecera = 5; // Consumo de la pecera
-        int Microondas = 50; // Consumo del microondas
+        int Microondas = 40; // Consumo del microondas
         int Extractor = 10; // Consumo del extractor 
         int VideoJuegos = 5; // Consumo de los video juegos
 
@@ -43,18 +44,29 @@ namespace ProyectoFinalSimulacion
                     Carga = Limite;
                     CargaTimer.Enabled = false;
                     InversorButton.Image = ProyectoFinalSimulacion.Properties.Resources.PausaBtn;
+                    MensajeCargaLabel.Text = "¡Carga Completa!";
                     ImprimirMensaje("¡Las baterías del inversor\nestán totalmente\ncargadas, el inversor se\nencuentra en reposo!");
                 }
                 else
                 {
                     Carga += Aumento;
+                    Tiempo = (Limite - Carga) / Aumento;
+                    MensajeCargaLabel.Text = "Carga completa en: " + Tiempo + " Min";
                 }
             }
             else
             {
                 Carga -= Consumo;
+                if (Consumo == 0)
+                    MensajeCargaLabel.Text = "No hay ningun consumo";
+                else
+                {
+                    Tiempo = Carga / Consumo;
+                    MensajeCargaLabel.Text = "Quedan " + Tiempo + " Min. de carga";
+                }
 
-                if(Carga <= 0)
+
+                if (Carga <= 0)
                 {
                     Carga = 0;
                     Inversor = false;
@@ -65,7 +77,9 @@ namespace ProyectoFinalSimulacion
                 }
 
             }
-            CargaLabel.Text = Convert.ToString(Carga);
+            
+            Porcentaje = (Carga * 100) / 5000;
+            CargaLabel.Text = Porcentaje.ToString("N2");
         }
 
         public void ImprimirMensaje(string Mensaje) // Funcion encargada de imprimir el mensaje

@@ -96,6 +96,7 @@
             this.TvSButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MensajeTimer = new System.Windows.Forms.Timer(this.components);
+            this.MensajeCargaLabel = new System.Windows.Forms.Label();
             this.LeyendaGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -107,7 +108,6 @@
             // 
             // LeyendaGroupBox
             // 
-            this.LeyendaGroupBox.Controls.Add(this.label14);
             this.LeyendaGroupBox.Controls.Add(this.label15);
             this.LeyendaGroupBox.Controls.Add(this.pictureBox4);
             this.LeyendaGroupBox.Controls.Add(this.label12);
@@ -136,7 +136,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Location = new System.Drawing.Point(156, 172);
+            this.label14.Location = new System.Drawing.Point(183, 14);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(21, 16);
             this.label14.TabIndex = 1;
@@ -306,9 +306,9 @@
             // 
             this.MensajesGroupBox.Controls.Add(this.MensajeLabel);
             this.MensajesGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MensajesGroupBox.Location = new System.Drawing.Point(5, 277);
+            this.MensajesGroupBox.Location = new System.Drawing.Point(5, 293);
             this.MensajesGroupBox.Name = "MensajesGroupBox";
-            this.MensajesGroupBox.Size = new System.Drawing.Size(205, 228);
+            this.MensajesGroupBox.Size = new System.Drawing.Size(205, 212);
             this.MensajesGroupBox.TabIndex = 36;
             this.MensajesGroupBox.TabStop = false;
             // 
@@ -322,12 +322,14 @@
             // 
             // CargaGroupBox
             // 
+            this.CargaGroupBox.Controls.Add(this.MensajeCargaLabel);
+            this.CargaGroupBox.Controls.Add(this.label14);
             this.CargaGroupBox.Controls.Add(this.CargaLabel);
             this.CargaGroupBox.Controls.Add(this.label13);
             this.CargaGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CargaGroupBox.Location = new System.Drawing.Point(5, 216);
             this.CargaGroupBox.Name = "CargaGroupBox";
-            this.CargaGroupBox.Size = new System.Drawing.Size(205, 55);
+            this.CargaGroupBox.Size = new System.Drawing.Size(205, 71);
             this.CargaGroupBox.TabIndex = 37;
             this.CargaGroupBox.TabStop = false;
             // 
@@ -337,9 +339,9 @@
             this.CargaLabel.BackColor = System.Drawing.Color.Transparent;
             this.CargaLabel.Location = new System.Drawing.Point(140, 15);
             this.CargaLabel.Name = "CargaLabel";
-            this.CargaLabel.Size = new System.Drawing.Size(24, 16);
+            this.CargaLabel.Size = new System.Drawing.Size(44, 16);
             this.CargaLabel.TabIndex = 2;
-            this.CargaLabel.Text = "70";
+            this.CargaLabel.Text = "70.00";
             // 
             // label13
             // 
@@ -353,7 +355,7 @@
             // CargaTimer
             // 
             this.CargaTimer.Enabled = true;
-            this.CargaTimer.Interval = 500;
+            this.CargaTimer.Interval = 1000;
             this.CargaTimer.Tick += new System.EventHandler(this.CargaTimer_Tick);
             // 
             // InversorButton
@@ -929,8 +931,16 @@
             // 
             // MensajeTimer
             // 
-            this.MensajeTimer.Interval = 1000;
+            this.MensajeTimer.Interval = 5000;
             this.MensajeTimer.Tick += new System.EventHandler(this.MensajeTimer_Tick);
+            // 
+            // MensajeCargaLabel
+            // 
+            this.MensajeCargaLabel.AutoSize = true;
+            this.MensajeCargaLabel.Location = new System.Drawing.Point(5, 45);
+            this.MensajeCargaLabel.Name = "MensajeCargaLabel";
+            this.MensajeCargaLabel.Size = new System.Drawing.Size(0, 16);
+            this.MensajeCargaLabel.TabIndex = 3;
             // 
             // Form1
             // 
@@ -1065,6 +1075,7 @@
         private System.Windows.Forms.Timer MensajeTimer;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label MensajeCargaLabel;
     }
 }
 
